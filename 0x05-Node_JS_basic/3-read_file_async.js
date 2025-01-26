@@ -13,16 +13,16 @@ function countStudents(fileName) {
             for (let i = 0; i < lines.length; i += 1) {
                 if (lines[i]) {
                     length += 1;
-                    const fields = lines[i].toString().split(',');
-                    if (Object.prototype.hasOwnProperty.call(students, fields[3])) {
-                        students[fields[3]].push(fields[0]);
+                    const field = lines[i].toString().split(',');
+                    if (Object.prototype.hasOwnProperty.call(students, field[3])) {
+                        students[field[3]].push(field[0]);
                     } else {
-                        students[fields[3]] = [fields[0]];
+                        students[field[3]] = [field[0]];
                     }
-                    if (Object.prototype.hasOwnProperty.call(fields, fields[3])) {
-                        fields[fields[3]] += 1;
+                    if (Object.prototype.hasOwnProperty.call(fields, field[3])) {
+                        fields[field[3]] += 1;
                     } else {
-                        fields[fields[3]] = 1;
+                        fields[field[3]] = 1;
                     }
                 }
             }
